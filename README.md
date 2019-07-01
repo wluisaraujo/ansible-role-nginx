@@ -1,12 +1,13 @@
-[![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-NTP%20Server-blue.svg)](https://galaxy.ansible.com/wluisaraujo/iac-ansible-ntp-server) [![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-ntp-server.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-ntp-server)
+[![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-NGINX-blue.svg)](https://galaxy.ansible.com/wluisaraujo/nginx) [![Build Status](https://travis-ci.org/wluisaraujo/ansible-role-nginx.svg?branch=master)](https://travis-ci.org/wluisaraujo/ansible-role-nginx)
+
 ---
-# IaC: with [Ansible](https://www.ansible.com) role to install and configure [NTP Server](www.ntp.org/)
+# IaC: with [Ansible](https://www.ansible.com) role to install and configure [NGINX](https://nginx.org)
 ------------
 
 Description
 ------------
 
- * Ansible for NTP Server
+ * Ansible role for NGINX
  
 Requirements
 ------------
@@ -31,7 +32,7 @@ Example Playbook
   vars:
     - name: value
   roles:
-    - iac-ansible-ntp-server
+    - nginx
 ...    
 ```
 
