@@ -1,16 +1,22 @@
 galaxy_info:
   role_name: nginx
   author: w.luis.araujo
-  description: "Configure nginx"
+  description: "Infrastructure as Code (IaC) with Ansible for NGINX"
   company: LUSAR | wluisaraujo.github.io
   license: "(GPLv3)"
-  min_ansible_version: 2.4
+  min_ansible_version: 2.0
   platforms:
   - name: EL
     versions:
-    - all
-  - name: Debian
+    - 7
+  - name: CentOS
     versions:
-    - all
-  galaxy_tags: [nginx]
+    - 7
+  - name: Fedora
+    versions:
+    - 30
+    - 29
+  galaxy_tags: 
+    - nginx
+    - webserver
 dependencies: []
