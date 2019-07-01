@@ -1,5 +1,4 @@
 [![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-NGINX-blue.svg)](https://galaxy.ansible.com/wluisaraujo/nginx) [![Build Status](https://travis-ci.org/wluisaraujo/ansible-role-nginx.svg?branch=master)](https://travis-ci.org/wluisaraujo/ansible-role-nginx)
-
 ---
 # IaC: with [Ansible](https://www.ansible.com) role to install and configure [NGINX](https://nginx.org)
 ------------
