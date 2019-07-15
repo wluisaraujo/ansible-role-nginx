@@ -24,25 +24,15 @@ env:
    version: 7
  - distribution: fedora
    version: 30
-# - distribution: fedora
-#   version: 25
-# - distribution: fedora
-#   version: 24
-# - distribution: ubuntu
-#   version: xenial
-# - distribution: ubuntu
-#   version: trusty
-# - distribution: debian
-#   version: stretch
-# - distribution: debian
-#   version: jessie
+ - distribution: ubuntu
+   version: bionic
+ - distribution: ubuntu
+   version: xenial  
+ - distribution: debian
+   version: buster
+ - distribution: debian
+   version: stretch
     
-# Install ansible
-#addons:
-# apt:
-# packages:
-# - python-pip
-
 install:
  # Install ansible
  - pip install ansible
@@ -60,8 +50,7 @@ install:
 script:
  # Basic role syntax check
  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
- - ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo --check
-
+ - ansible-playbook -i tests/inventory tests/test.yml --connection=local --check
 
 notifications:
  webhooks: https://galaxy.ansible.com/api/v1/notifications/
