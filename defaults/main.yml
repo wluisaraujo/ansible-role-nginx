@@ -1,2 +1,6 @@
 ---
 # defaults file for ansible-role-nginx
+service_name: ngnix
+mydomain: www.exemplo.com.br
+server01: web01.exemplo.com.br
+server02: web01.exemplo.com.br

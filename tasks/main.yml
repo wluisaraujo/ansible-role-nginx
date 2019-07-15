@@ -1,2 +1,10 @@
 ---
 # tasks file for ansible-role-nginx
+- name: "Install the nginx package"
+  package:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop:
+    - nginx
+...
