@@ -43,7 +43,6 @@ install:
 # Create ansible.cfg with correct roles_path
  - printf '[defaults]\nroles_path=../' >ansible.cfg
 
-
  # Install ansible role
  - ansible-galaxy install wluisaraujo.nginx
 
