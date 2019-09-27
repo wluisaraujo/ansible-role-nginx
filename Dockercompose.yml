@@ -20,7 +20,9 @@ services:
       - "80/udp"
       - "443/tcp"
     extra_hosts:
-      - "ns1.dexter.com.br:172.16.238.10"  
-      - "ldap.dexter.com.br:172.16.238.10"  
-      - "balancer.dexter.com.br:172.16.238.10"  
+      - "balancer.dexter.com.br:172.16.238.1"  
+      - "intranet.dexter.com.br:172.16.238.2"  
+      - "ldap.dexter.com.br:172.16.238.3"  
+      - "ns1.dexter.com.br:172.16.238.4"  
+      - "proxy.dexter.com.br:172.16.238.5"
 ...
