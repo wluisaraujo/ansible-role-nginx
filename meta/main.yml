@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: workstation
+#  role_name: workstation
   
   author: w.luis.araujo
   description: "Infrastructure as Code (IaC) with Ansible for NGINX"
