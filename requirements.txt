@@ -1,0 +1,2 @@
+# These are python dependencies to fetch with pip
+ansible-lint
