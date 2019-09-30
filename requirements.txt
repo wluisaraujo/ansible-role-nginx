@@ -1,3 +1,3 @@
 # These are python dependencies to fetch with pip
-ansible==2.4.0
+ansible==2.6.18
 ansible-lint
