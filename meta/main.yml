@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-#  role_name: nginx
+  role_name: nginx
   
   author: w.luis.araujo
   description: "Infrastructure as Code (IaC) with Ansible for NGINX"
@@ -15,7 +15,7 @@ galaxy_info:
   - name: EL
     versions:
       - 7
-      
+
   - name: Fedora
     versions:
       - 30
