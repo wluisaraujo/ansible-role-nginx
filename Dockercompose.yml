@@ -12,10 +12,9 @@ services:
         ipv4_address: 172.16.238.10
     dns:
       - 127.0.0.1
-      - 8.8.8.8
     ports:
       - "80/tcp:80/tcp"
-      - "443/tcp:443/udp"
+      - "443/tcp:443/tcp"
     expose:
       - "80/udp"
       - "443/tcp"
