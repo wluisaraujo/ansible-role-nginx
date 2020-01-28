@@ -1,17 +1,12 @@
 ---
-version: '3.7'
+version: '3'
 services:
   security:
     image: wluisaraujo/nginx
+    hostname: balancer.dexter.com.br
     container_name: balancer
     dns_search: balancer.dexter.com.br
     restart: always
-    network_mode: "host"
-    networks:
-      app_net:
-        ipv4_address: 172.16.238.10
-    dns:
-      - 127.0.0.1
     ports:
       - "80/tcp:80/tcp"
       - "443/tcp:443/tcp"
