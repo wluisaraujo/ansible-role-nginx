@@ -3,10 +3,12 @@ version: '3'
 services:
   security:
     image: wluisaraujo/nginx
+    privileged: true
+    tty: true
+    restart: always
     hostname: balancer.dexter.com.br
     container_name: balancer
     dns_search: balancer.dexter.com.br
-    restart: always
     ports:
       - "80/tcp:80/tcp"
       - "443/tcp:443/tcp"
