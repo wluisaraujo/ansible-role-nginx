@@ -37,12 +37,10 @@ http {
 
 	server {
 	listen 80;
-	server_name kibana-prd.smiles.local.br;
+	server_name localhost, balancer.exemplo.local;
 	location / {
 	    proxy_set_header HOST $host;
-	    proxy_pass http://internal-cfsta-ECSAL-15PH370YKTKF3-413398211.us-east-1.elb.amazonaws.com;
-	    auth_basic "Smiles: Restricted Content";
-	    auth_basic_user_file /etc/nginx/.htpasswd;
+	    proxy_pass http://internal-webserver.exemplo.local;
 	}
  }
 }
