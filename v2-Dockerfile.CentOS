@@ -12,8 +12,8 @@ ENV CONFIG "\
 --conf-path=/opt/nginx/conf/nginx.conf \
 --error-log-path=/opt/nginx/logs/error.log \
 --group=nginx \
---http-client-body-temp-path=/opt/nginx/cache/client_temp \
---http-fastcgi-temp-path=/opt/nginx/cache/fastcgi_temp \
+--http-client-body-temp-path=/var/cache/nginx/client_temp \
+--http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \
 --http-log-path=/opt/nginx/logs/access.log \
 --http-proxy-temp-path=/opt/nginx/cache/proxy_temp \
 --http-scgi-temp-path=/opt/nginx/cache/scgi_temp \

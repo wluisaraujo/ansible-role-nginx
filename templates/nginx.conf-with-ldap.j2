@@ -1,0 +1,48 @@
+## Friday13
+worker_processes 1;
+events { worker_connections 1024; }
+http {
+	include       /etc/nginx/mime.types;
+	log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+		      '$status $body_bytes_sent "$http_referer" '
+		      '"$http_user_agent" "$http_x_forwarded_for"';
+	access_log  /var/log/nginx/access.log  main;
+	sendfile      on;
+
+	# define ldap server
+	ldap_server ad_1 {
+		# user search base.
+		url "ldap://<YOUR LDAP SERVER>:3268/OU=Offices,DC=company,DC=com?sAMAccountName?sub?(objectClass=person)";
+		# bind as
+		binddn "CN=Operator,OU=Service Accounts,DC=company,DC=com";
+		# bind pw
+		binddn_passwd <PUT Operator's PASSWORD HERE>;
+		# group attribute name which contains member object
+		group_attribute member;
+		# search for full DN in member object
+		group_attribute_is_dn on;
+		# matching algorithm (any / all)
+		satisfy any;
+		# list of allowed groups
+		require group "CN=Admins,OU=My Security Groups,DC=company,DC=com";
+		require group "CN=New York Users,OU=My Security Groups,DC=company,DC=com";
+		# list of allowed users
+		# require 'valid_user' cannot be used together with 'user' as valid user is a superset
+		# require valid_user;
+		require user "CN=Batman,OU=Users,OU=New York Office,OU=Offices,DC=company,DC=com";
+		require user "CN=Robocop,OU=Users,OU=New York Office,OU=Offices,DC=company,DC=com";
+	}
+
+}
+
+	server {
+	listen 80;
+	server_name kibana-prd.smiles.local.br;
+	location / {
+	    proxy_set_header HOST $host;
+	    proxy_pass http://internal-cfsta-ECSAL-15PH370YKTKF3-413398211.us-east-1.elb.amazonaws.com;
+	    auth_basic "Smiles: Restricted Content";
+	    auth_basic_user_file /etc/nginx/.htpasswd;
+	}
+ }
+}
