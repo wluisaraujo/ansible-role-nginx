@@ -54,6 +54,10 @@ telnet
 
 RUN yum clean all ; rm -rf /var/cache/yum/* 2> /dev/null
 
+RUN mkdir -p /var/{log/nginx,cache/nginx}
+
+RUN chown -R nginx.nginx /var/{log/nginx,cache/nginx}
+
 RUN git clone https://github.com/kvspb/nginx-auth-ldap.git /usr/src/nginx-auth-ldap
 
 RUN curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz -o /tmp/nginx.tar.gz \
