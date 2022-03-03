@@ -48,7 +48,8 @@ curl \
 wget \
 openssl-devel \
 pcre-devel \
-openldap-devel.x86_64
+openldap-clients \
+openldap-devel.x86_64 \
 lsof \
 telnet
 
